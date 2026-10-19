@@ -1,15 +1,39 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SIMC Chile</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SIMC Chile: construcción, remodelación y mantención. Solicita una estimación y cotiza por WhatsApp.">
+<title>SIMC Chile | Construcción y mantención</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#14243b;background:#f5f7fb}*{box-sizing:border-box}body{margin:0}header{background:white;border-bottom:1px solid #e4e9f0;position:sticky;top:0;z-index:2}.wrap{max-width:1040px;margin:auto;padding:0 20px}.nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:12px}.brand{font-weight:900;color:#1762b4;font-size:1.3rem;text-decoration:none}.nav a:not(.brand){color:#38536d;text-decoration:none;font-size:.9rem;margin-left:14px}.hero{background:linear-gradient(130deg,#e7f2ff,#fff);padding:65px 0}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;max-width:680px;margin:0 0 18px}.hero p{font-size:1.1rem;color:#4a6279;max-width:610px}.btn{display:inline-block;background:#1769c2;color:white;padding:13px 21px;border:0;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}.btn.secondary{background:#e9f2fc;color:#16599e}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}section{padding:48px 0}h2{font-size:1.7rem;margin:0 0 12px}.muted{color:#5b7186}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px;margin-top:22px}.card{background:white;border:1px solid #e3eaf1;border-radius:16px;padding:22px;box-shadow:0 5px 18px #172d4810}.card h3{margin:8px 0}.icon{font-size:1.9rem}.panel{background:white;border:1px solid #e3eaf1;border-radius:18px;padding:clamp(18px,4vw,34px);margin-top:22px}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}label{display:block;font-size:.92rem;font-weight:650;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #bdccdc;border-radius:9px;padding:12px;font:inherit;background:white;color:#172d48}textarea{min-height:90px}input:focus,select:focus,textarea:focus{outline:2px solid #83b9f0}.field{margin-bottom:16px}.estimate{background:#edf5ff;border:1px solid #c9e1fc;border-radius:12px;padding:18px;margin:14px 0}.estimate strong{font-size:1.6rem;color:#155baf}.fine{font-size:.84rem;color:#526980}footer{background:#142943;color:#e7f0fa;padding:30px 0}footer a{color:#d7e9ff}@media(max-width:520px){.nav a:not(.brand){font-size:.78rem;margin-left:7px}.hero{padding:42px 0}}
+</style>
 </head>
 <body>
-  <h1>Bienvenidos a SIMC Chile</h1>
-  <p>Construcción, remodelaciones y mantención.</p>
-  <h2>Próximamente: cotizador online</h2>
-</body>
-</html>
-  
+<header><div class="wrap nav"><a class="brand" href="#inicio">SIMC <span style="color:#253b53">Chile</span></a><nav><a href="#servicios">Servicios</a><a href="#cotizar">Cotizar</a></nav></div></header>
+<main>
+<div class="hero" id="inicio"><div class="wrap"><p style="font-weight:800;color:#1769c2;letter-spacing:.08em;font-size:.85rem">CONSTRUCCIÓN · REMODELACIÓN · MANTENCIÓN</p><h1>Transformamos tus espacios con soluciones a tu medida.</h1><p>Cuéntanos qué necesitas, calcula un valor orientativo y solicita una evaluación de tu proyecto.</p><div class="actions"><a class="btn" href="#cotizar">Cotizar mi proyecto</a><a class="btn secondary" href="#servicios">Ver servicios</a></div></div></div>
+<section id="servicios"><div class="wrap"><h2>¿Qué necesitas construir o mejorar?</h2><p class="muted">Trabajamos en proyectos de mantención, reparación y remodelación.</p><div class="grid" id="serviceCards"></div></div></section>
+<section id="cotizar" style="background:#edf2f8"><div class="wrap"><h2>Cotizador de proyectos</h2><p class="muted">Completa los datos para obtener una estimación inicial y enviarnos tu solicitud.</p><div class="panel"><form id="quoteForm"><div class="formgrid"><div class="field"><label for="service">Tipo de trabajo</label><select id="service" required></select></div><div class="field"><label for="area">Superficie aproximada (m²)</label><input id="area" type="number" min="0.1" max="10000" step="0.1" placeholder="Ej.: 16" required></div><div class="field"><label for="materials">Materiales</label><select id="materials"><option value="labor">Solo mano de obra</option><option value="included">Incluir materiales (por evaluar)</option></select></div><div class="field"><label for="urgency">¿Cuándo necesitas comenzar?</label><select id="urgency"><option>Flexible</option><option>Esta semana</option><option>Este mes</option><option>Por coordinar</option></select></div><div class="field"><label for="name">Tu nombre</label><input id="name" maxlength="80" autocomplete="name" required></div><div class="field"><label for="district">Comuna del proyecto</label><input id="district" maxlength="90" placeholder="Ej.: La Florida" required></div></div><div class="field"><label for="details">Describe tu proyecto (opcional)</label><textarea id="details" maxlength="700" placeholder="Estado actual, acceso, retiro de escombros, terminaciones, etc."></textarea></div><div class="estimate" aria-live="polite"><div class="fine">Estimación orientativa de mano de obra</div><strong id="amount">Ingresa los m²</strong><div class="fine" id="estimateNote">No incluye materiales, traslado ni imprevistos. El presupuesto final requiere evaluación.</div></div><button class="btn" type="submit">Enviar solicitud por WhatsApp ↗</button><p class="fine">Al pulsar se abrirá WhatsApp con tu solicitud preparada. Tú decides si enviarla. Las fotografías pueden adjuntarse allí.</p></form></div></div></section>
+<section><div class="wrap"><h2>¿Cómo funciona?</h2><div class="grid"><div class="card"><h3>1. Cuéntanos</h3><p>Selecciona el trabajo y entrega las medidas aproximadas.</p></div><div class="card"><h3>2. Revisa</h3><p>Obtén un valor referencial inicial para mano de obra.</p></div><div class="card"><h3>3. Coordinamos</h3><p>Envía tu solicitud y evaluamos el alcance para una cotización definitiva.</p></div></div></div></section>
+</main><footer><div class="wrap"><strong>SIMC Chile</strong><p>Construcción, remodelaciones y mantención.</p><small>Estimaciones sujetas a visita técnica y condiciones reales de obra.</small></div></footer>
+<script>
+// Precios DEMOSTRATIVOS en CLP/m²: deben revisarse antes de cotizar a clientes.
+const services=[
+ {id:'ceramica',name:'Instalación de cerámica',icon:'▦',rate:15000,description:'Pisos y revestimientos de muros.'},
+ {id:'pintura',name:'Pintura interior',icon:'◩',rate:6500,description:'Muros, cielos y terminaciones.'},
+ {id:'radier',name:'Construcción de radier',icon:'▤',rate:22000,description:'Preparación y hormigonado de superficies.'},
+ {id:'piso',name:'Piso flotante',icon:'▥',rate:9000,description:'Instalación y remates.'},
+ {id:'tabiques',name:'Tabiques y volcanita',icon:'▧',rate:20000,description:'Divisiones y revestimientos interiores.'},
+ {id:'techo',name:'Techumbres y reparaciones',icon:'⌂',rate:null,description:'Reparación, cubiertas y mantención.'},
+ {id:'otros',name:'Remodelación y otros trabajos',icon:'⚒',rate:null,description:'Puertas, gasfitería, electricidad y más.'}
+];
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat('es-CL',{style:'currency',currency:'CLP',maximumFractionDigits:0}).format(n);
+$('serviceCards').innerHTML=services.map(s=>`<article class="card"><div class="icon" aria-hidden="true">${s.icon}</div><h3>${s.name}</h3><p class="muted">${s.description}</p><button class="btn secondary" type="button" data-service="${s.id}">Cotizar servicio</button></article>`).join('');
+$('service').innerHTML='<option value="">Selecciona un servicio</option>'+services.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
+function estimate(){const s=services.find(x=>x.id===$('service').value),a=Number($('area').value);const valid=Number.isFinite(a)&&a>0&&a<=10000;if(!s||!valid){$('amount').textContent='Completa servicio y m²';return;}if(s.rate===null){$('amount').textContent='Requiere evaluación';return;}$('amount').textContent=money(Math.round(s.rate*a));}
+['service','area','materials'].forEach(id=>$(id).addEventListener('input',estimate));
+document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{$('service').value=b.dataset.service;estimate();$('cotizar').scrollIntoView({behavior:'smooth'});}));
+$('quoteForm').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;const s=services.find(x=>x.id===$('service').value);if(!s)return;const a=Number($('area').value);if(!(a>0&&a<=10000))return;const quote=s.rate===null?'Requiere evaluación':money(Math.round(a*s.rate))+' (mano de obra, referencial)';const msg=`Hola, SIMC Chile. Quiero solicitar una cotización.\n\nNombre: ${$('name').value}\nComuna: ${$('district').value}\nServicio: ${s.name}\nSuperficie: ${a} m²\nMateriales: ${$('materials').selectedOptions[0].text}\nInicio: ${$('urgency').value}\nEstimación inicial: ${quote}\nDetalles: ${$('details').value||'Sin detalles adicionales'}\n\nQuisiera coordinar una evaluación. También puedo enviar fotografías.`;window.open('https://wa.me/56999152849?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');});
+</script>
+</body></html>
